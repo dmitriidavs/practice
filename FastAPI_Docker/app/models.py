@@ -36,7 +36,7 @@ class User(Base):
 
 
 class Stream(Base):
-    __tablename_ = 'stream'
+    __tablename__ = 'stream'
 
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user_id'))
@@ -47,7 +47,7 @@ class Stream(Base):
 
 
 class AuthToken(Base):
-    __tablename_ = 'auth_token'
+    __tablename__ = 'auth_token'
     id = Column(Integer, primary_key=True)
     token = Column(String)
     user_id = Column(Integer, ForeignKey('user_id'))
