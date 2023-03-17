@@ -79,5 +79,7 @@ int main()
     printf("What did the giraffe say when her neighbor wouldn't stop %s?\n", verbInitForm);
     printf("You're %s me %s!", actionNoun, actionAdj);
 
+    /* NEXT: ARRAYS*/
+
     return 0;
 }
