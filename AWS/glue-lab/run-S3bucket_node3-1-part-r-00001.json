@@ -1,0 +1,45 @@
+{"customerid":"from awsglue.transforms import *"}
+{"customerid":"from awsglue.utils import getResolvedOptions"}
+{"customerid":"from pyspark.context import SparkContext"}
+{"customerid":"from awsglue.context import GlueContext"}
+{"customerid":"from awsglue.job import Job"}
+{}
+{"customerid":"args = getResolvedOptions(sys.argv"}
+{"customerid":"sc = SparkContext()"}
+{"customerid":"glueContext = GlueContext(sc)"}
+{"customerid":"spark = glueContext.spark_session"}
+{"customerid":"job = Job(glueContext)"}
+{"customerid":"job.init(args[\"JOB_NAME\"]"}
+{}
+{"customerid":"# Script generated for node S3 bucket"}
+{"customerid":"S3bucket_node1 = glueContext.create_dynamic_frame.from_catalog("}
+{"customerid":"    database=\"glue\""}
+{"customerid":"    table_name=\"aws_glue_lab_dmitriidavs\""}
+{"customerid":"    transformation_ctx=\"S3bucket_node1\""}
+{"customerid":")"}
+{}
+{"customerid":"# Script generated for node ApplyMapping"}
+{"customerid":"ApplyMapping_node2 = SelectFields.apply("}
+{"customerid":"    frame=S3bucket_node1"}
+{"customerid":"    paths=["}
+{"customerid":"        \"customerid\""}
+{"customerid":"        \"firstname\""}
+{"customerid":"        \"middlename\""}
+{"customerid":"        \"lastname\""}
+{"customerid":"        \"companyname\""}
+{"customerid":"        \"emailaddress\""}
+{"customerid":"        \"phone\""}
+{"customerid":"    ]"}
+{"customerid":"    transformation_ctx=\"ApplyMapping_node2\""}
+{"customerid":")"}
+{}
+{"customerid":"# Script generated for node S3 bucket"}
+{"customerid":"S3bucket_node3 = glueContext.write_dynamic_frame.from_options("}
+{"customerid":"    frame=ApplyMapping_node2"}
+{"customerid":"    connection_type=\"s3\""}
+{"customerid":"    format=\"json\""}
+{"customerid":"    connection_options={\"path\": \"s3://aws-glue-lab-dmitriidavs\""}
+{"customerid":"    transformation_ctx=\"S3bucket_node3\""}
+{"customerid":")"}
+{}
+{"customerid":"job.commit()"}
