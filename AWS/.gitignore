@@ -2,3 +2,5 @@
 creds
 pwd.txt
 venv
+.venv.bat
+test.py
