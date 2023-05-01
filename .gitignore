@@ -1,7 +1,10 @@
 .idea
+.DS_Store
 
 bin
 obj
 *.depend
 *.layout
 *.cbp
+
+creds.py
