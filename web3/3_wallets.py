@@ -21,8 +21,8 @@ def address_is_contract(account: Web3.to_checksum_address) -> tuple[bool, str]:
 
 if __name__ == '__main__':
     web3 = Web3(Web3.HTTPProvider(INFURA_API_KEY))
-    target_address = web3.to_checksum_address(ERC_20_TARGET_ADDRESS)
-    # target_address = web3.to_checksum_address(ERC_20_WALLET_ADDRESS)
+    # target_address = web3.to_checksum_address(ERC_20_TARGET_ADDRESS)
+    target_address = web3.to_checksum_address(ERC_20_WALLET_ADDRESS)
 
     if address_is_wallet(target_address):
         print(f'Address: {target_address}\n'
