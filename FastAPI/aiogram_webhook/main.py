@@ -2,6 +2,7 @@ import os
 
 from bot import bot, dp
 
+import uvicorn
 from aiogram import types, Dispatcher, Bot
 from fastapi import FastAPI
 
@@ -31,4 +32,8 @@ async def bot_webhook(update: dict):
 
 @app.on_event('shutdown')
 async def on_shutdown():
-    pass
+    await bot.delete_webhook()
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='localhost', port=8000)
